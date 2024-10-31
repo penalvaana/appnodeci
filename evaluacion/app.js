@@ -11,10 +11,16 @@ app.use('/books', books);
 app.use('/authors', authors);
 
 app.use('/*', (req, res) => {
-    res.status(200).json({
+    res.status(404).json({
         message: 'Incorrect route or params',
     });
 });
+
+app.get('/', (req, res) => {
+    res.status(200).json({
+        message: 'Hola mundo'
+    })
+})
 
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
