@@ -1,8 +1,8 @@
 const express = require('express');
-const app = express();
-app.get('/', (req, res) => {
- res.status(200).json({
- message: 'Books'
- })
-})
-module.exports = app;
+const router = express.Router();
+
+router.get('/', (req, res) => {
+    res.status(200).send('<h1>Lista de Libros</h1>'); // Devuelve HTML
+});
+
+module.exports = router;

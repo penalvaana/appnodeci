@@ -5,16 +5,14 @@ const request = supertest(app);
 describe("/test endpoint", () => {
   test("Debe devolver 'Books'", async () => {
     const response = await request.get("/books");
-    const body = JSON.parse(response.text);
     expect(response.status).toBe(200);
-    expect(body.message).toBe("Books");
+    expect(response.text).toContain("Lista de Libros"); // Verifica el contenido del HTML
   });
 
   test("Debe devolver 'Authors'", async () => {
     const response = await request.get("/authors");
-    const body = JSON.parse(response.text);
     expect(response.status).toBe(200);
-    expect(body.message).toBe("Authors");
+    expect(response.text).toContain("Lista de Autores"); // Verifica el contenido del HTML
   });
 
   test("Debe devolver error", async () => {
