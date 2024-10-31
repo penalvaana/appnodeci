@@ -11,7 +11,7 @@ app.use('/books', books);
 app.use('/authors', authors);
 
 app.use('/*', (req, res) => {
-    res.status(404).json({
+    res.status(200).json({
         message: 'Incorrect route or params',
     });
 });
