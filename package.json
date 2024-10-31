@@ -1,9 +1,9 @@
 {
   "name": "tema-8",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "evaluacion/app.js",
   "scripts": {
-    "start": "node app",
+    "start": "node evaluacion/app.js",
     "test": "jest app.test.js --forceExit"
   },
   "keywords": [],
